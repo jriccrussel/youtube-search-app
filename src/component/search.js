@@ -12,6 +12,9 @@ export class SearchBar extends Component {
         e.preventDefault()
 
         // props ni cya
+        // g pasa nato ang onTermSubmit callback sa this.props.onFormSubmit prop 
+        // so onTermSubmit is eqaul to this.props.onFormSubmit
+        // inig submit nato sa onFormSubmit(ang function) kato atong ge type sa input field e search or e refer nya kato ato g type solud and sa atong onChange na onInputChange naka set this.setState({ term: e.target.value }) mao iya g return or g basihan
         this.props.onFormSubmit(this.state.term)
     }
         
