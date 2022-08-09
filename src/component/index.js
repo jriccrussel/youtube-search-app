@@ -20,7 +20,10 @@ class Index extends Component {
         })
 
         // console.log(term)
-        this.setState({ videos: res.data.items })
+        this.setState({ 
+            videos: res.data.items,
+            selectedVideo: res.data.items[0] 
+        })
     }
 
     // like sa onTermSubmit ang onVideoSelect inig pasa nato to VidItem ang onVideoSelect mag expect cya ma pasahan ug 'state' or data 
@@ -36,8 +39,16 @@ class Index extends Component {
                 {/* I have {this.state.videos.length} videos. */}
                 {/* inig click nato sa video sa VideoList then e view dayon ang VideoDetail */}
                 {/* if e comment nimo ang 'this.setState({ selectedVideo: video })' sa onVideoSelect function dili cya mo display or dili mo work */}
-                <VideoDetail video={this.state.selectedVideo}/>
-                <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
+                <div className="ui grid">
+                    <div className="ui row">
+                        <div className="eleven wide column">
+                            <VideoDetail video={this.state.selectedVideo}/>
+                        </div>
+                        <div className="five wide column">
+                            <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
