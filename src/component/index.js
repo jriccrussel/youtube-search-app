@@ -10,6 +10,10 @@ class Index extends Component {
         selectedVideo: null 
     }
 
+    componentDidMount(){
+        this.onTermSubmit('buildings')
+    }
+
     // term(parameter)
     // ang onTermSubmit inig pasa nato to onFormSubmit ang onTermSubmit mag expect cya na pasahan cya ug 'state' or data which is mao naa tai parameter na 'term'
     onTermSubmit = async (term) => {
